@@ -2,8 +2,8 @@
  * Sem 2, week 5
  *
  * Portfolio submission: Hexadecimal to Decimal Converter
- * Name:
- * ID: 
+ * Name:Ashkan Ramjerdi
+ * ID: xcqc0000
  */
 
 #include <stdio.h>
@@ -14,7 +14,7 @@ int main(void){
 	char hex[9];
 	
 	printf("Enter a hexadecimal:");
-
+    scanf("%8c",hex)
 	// if input contains invalid hex digit
 	// printf("Error: Invalid Hexadecimal\n");
 	
