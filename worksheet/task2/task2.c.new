@@ -1,0 +1,51 @@
+/*
+ * Sem 2, week 5
+ *
+ * Portfolio submission: Hexadecimal to Decimal Converter
+ * Name:Ashkan Ramjerdi
+ * ID: xcqc0000
+ */
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(void){
+    long decimal = 0;
+    char hex[9];
+    int valid = 1;
+
+    printf("Enter a hexadecimal: ");
+    if (scanf("%8s", hex) != 1) {
+        printf("Error reading input\n");
+        return 1;
+    }
+
+    for (size_t i = 0; hex[i] != '\0'; ++i) {
+        char c = hex[i];
+        int value;
+
+        if (c >= '0' && c <= '9') {
+            value = c - '0';
+        } else {
+            c = toupper((unsigned char)c);
+            if (c >= 'A' && c <= 'F') {
+                value = 10 + (c - 'A');
+            } else {
+                valid = 0;
+                break;
+            }
+        }
+
+        decimal = decimal * 16 + value;
+    }
+
+    if (!valid) {
+        printf("Error: Invalid Hexadecimal\n");
+        return 1;
+    }
+
+    printf("decimal:%ld\n", decimal);
+
+    return 0;
+}
